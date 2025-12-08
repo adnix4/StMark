@@ -1,0 +1,11 @@
+services:
+# Web service configuration
+  web:
+    image: nginx:latest
+    ports:
+      - "80:80"
+  
+  # Application service configuration
+  app:
+    build: 
+      dockerfile: ./php/Dockerfile
