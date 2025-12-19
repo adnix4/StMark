@@ -1,12 +1,55 @@
 /* Minimal custom styles for mobile-first church website */
 :root{
-  --brand:#0d6efd;
+  --brand:#1b6351;
 }
 body{font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; background:#f8f9fa;}
-.hero{background:linear-gradient(135deg, rgba(13,110,253,0.9), rgba(0,123,255,0.85));}
+.hero{background:linear-gradient(135deg, #1b6351, #1b6351));}
 .site-header .navbar-brand{color:var(--brand);}
-.site-header .navbar-brand:hover{color:#084298}
+.site-header .navbar-brand:hover{color:#1b6351}
+
+/* Custom hamburger icon (three bars) - visible on all screen sizes */
+.navbar-expand-lg .navbar-toggler{display:flex !important}
+.navbar-toggler{border:0; padding:0.25rem 0.5rem; display:flex; align-items:center; justify-content:center}
+.navbar-toggler:focus{box-shadow:0 0 0 0.25rem rgba(13,110,253,0.25)}
+.navbar-toggler .navbar-toggler-icon{display:none}
+.hamburger{display:inline-flex; flex-direction:column; gap:6px; width:28px; height:20px; position:relative; cursor:pointer}
+.hamburger .bar{display:block; height:3px; width:100%; background:#333; border-radius:2px; transition:all .25s ease; flex-shrink:0}
+
+/* When toggler is expanded - animate into X */
+.navbar-toggler[aria-expanded="true"] .hamburger .bar:nth-child(1){transform:rotate(45deg) translateY(11px)}
+.navbar-toggler[aria-expanded="true"] .hamburger .bar:nth-child(2){opacity:0; transform:translateX(-10px)}
+.navbar-toggler[aria-expanded="true"] .hamburger .bar:nth-child(3){transform:rotate(-45deg) translateY(-11px)}
+
+/* Dropdown styling: collapse becomes an overlay dropdown on all screens */
+.site-header .navbar{position:relative}
+.site-header .navbar-collapse{position:absolute; top:100%; left:0; right:0; background:#fff; z-index:1000; padding:0.75rem 1rem; box-shadow:0 4px 12px rgba(0,0,0,0.08); transition:opacity 0.2s ease; display:none !important}
+.site-header .navbar-collapse.show{display:block !important}
+.site-header .navbar-collapse .navbar-nav{flex-direction:column}
+.site-header .navbar-collapse .nav-link{padding:0.5rem 0}
+
+/* Hover behavior on large screens (desktop) */
+@media (min-width:992px){
+  .navbar-toggler:hover{background:rgba(0,0,0,0.05); border-radius:0.25rem}
+}
 
 @media (max-width:576px){
   .hero .display-5{font-size:1.6rem}
+}
+
+/* Layout tweaks: navbar full-width; dropdown centered and shrink-to-fit on large screens; centered buttons on small screens */
+@media (min-width:992px){
+  .site-header .navbar{display:flex; width:100%; align-items:center; padding:0.5rem 1rem}
+  .site-header .navbar .container{display:flex; align-items:center; justify-content:space-between; gap:0.75rem; padding:0}
+  /* Allow JS to position dropdown under toggler; keep it shrink-to-fit and right-align text */
+  .site-header .navbar-collapse{left:auto; right:auto; transform:none; width:auto; min-width:160px}
+  .site-header .navbar-collapse .navbar-nav{align-items:flex-end}
+  .site-header .navbar-collapse .nav-link{width:100%; text-align:right}
+}
+
+@media (max-width:991.98px){
+  /* On small screens, center nav items and buttons for a clean look */
+  .site-header .navbar-collapse .navbar-nav{align-items:center}
+  .site-header .navbar-collapse .nav-link,
+  .site-header .navbar-collapse .btn{display:flex; align-items:center; justify-content:center; text-align:center; width:100%}
+  .site-header .navbar-collapse .btn{padding-left:0; padding-right:0}
 }

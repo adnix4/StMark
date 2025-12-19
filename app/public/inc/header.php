@@ -18,16 +18,39 @@ if ($base !== '/') $base .= '/';
     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
       <div class="container">
         <a class="navbar-brand fw-bold" href="<?php echo $base; ?>"><img src="<?php echo $base; ?>assets/images/logo.png" alt="St. Mark Logo" style="height: 40px; margin-right: 10px;"> St. Mark</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+        <button id="navToggle" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="hamburger" aria-hidden="false">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </span>
         </button>
         <div class="collapse navbar-collapse" id="mainNav">
           <ul class="navbar-nav ms-auto">
-            <li class="nav-item"><a class="nav-link" href="<?php echo $base; ?>?page=home">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="<?php echo $base; ?>?page=about">About</a></li>
-            <li class="nav-item"><a class="nav-link" href="<?php echo $base; ?>?page=ministries">Ministries</a></li>
-            <li class="nav-item"><a class="nav-link" href="<?php echo $base; ?>?page=events">Events</a></li>
-            <li class="nav-item"><a class="nav-link btn btn-primary text-white ms-2" href="<?php echo $base; ?>?page=contact">Contact</a></li>
+<?php
+// Dynamically list all PHP pages from the pages directory
+$pages_dir = __DIR__ . '/../pages';
+$pages = [];
+if (is_dir($pages_dir)) {
+  foreach (scandir($pages_dir) as $file) {
+    if ($file[0] === '.') continue; // skip dotfiles
+    if (pathinfo($file, PATHINFO_EXTENSION) !== 'php') continue;
+    $name = pathinfo($file, PATHINFO_FILENAME);
+    $pages[$name] = $file;
+  }
+  // Ensure 'home' appears first when present
+  uksort($pages, function($a, $b){
+    if ($a === 'home') return -1;
+    if ($b === 'home') return 1;
+    return strcmp($a, $b);
+  });
+}
+
+foreach ($pages as $name => $file) {
+  $label = ucwords(str_replace(['-','_'], ' ', $name));
+  echo '<li class="nav-item"><a class="nav-link" href="' . htmlspecialchars($base) . '?page=' . htmlspecialchars($name) . '">' . htmlspecialchars($label) . '</a></li>' . "\n";
+}
+?>
           </ul>
         </div>
       </div>
