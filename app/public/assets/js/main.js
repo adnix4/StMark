@@ -35,13 +35,22 @@
       if (!isLargeScreen()){
         navMenu.style.left = '';
         navMenu.style.transform = '';
+        navMenu.style.top = '';
         return;
       }
-      var rect = toggler.getBoundingClientRect();
-      // center x relative to viewport + pageXOffset
-      var centerX = rect.left + (rect.width / 2) + window.pageXOffset;
-      navMenu.style.left = centerX + 'px';
-      navMenu.style.transform = 'translateX(-50%)';
+      var togglerRect = toggler.getBoundingClientRect();
+      var navbarRect = navbar.getBoundingClientRect();
+      var navbarBottom = navbarRect.bottom + window.pageYOffset;
+      var centerX = togglerRect.left + (togglerRect.width / 2) + window.pageXOffset;
+      
+      // Constrain dropdown to stay within viewport width
+      var dropdownWidth = navMenu.offsetWidth || 200;
+      var maxLeft = window.innerWidth - dropdownWidth - 10;
+      var calculatedLeft = Math.max(10, Math.min(centerX - (dropdownWidth / 2), maxLeft));
+      
+      navMenu.style.left = calculatedLeft + 'px';
+      navMenu.style.top = navbarBottom + 'px';
+      navMenu.style.transform = 'none';
       navMenu.style.right = 'auto';
     }
 

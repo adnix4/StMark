@@ -16,7 +16,7 @@ if ($base !== '/') $base .= '/';
 <body>
   <header class="site-header mb-4">
     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
-      <div class="container">
+      <div class="container-fluid">
         <a class="navbar-brand fw-bold" href="<?php echo $base; ?>"><img src="<?php echo $base; ?>assets/images/logo.png" alt="St. Mark Logo" style="height: 40px; margin-right: 10px;"> St. Mark</a>
         <button id="navToggle" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="hamburger" aria-hidden="false">
@@ -56,4 +56,4 @@ foreach ($pages as $name => $file) {
       </div>
     </nav>
   </header>
-  <main class="container mb-5">
+  <main class="container-fluid mb-5">
