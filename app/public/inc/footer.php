@@ -1,6 +1,6 @@
   </main>
   <footer class="bg-light py-4 border-top">
-    <div class="container text-center small text-muted">
+    <div class="container-fluid text-center small text-muted">
       <p>&copy; <?php echo date('Y'); ?> Grace Church — All rights reserved.</p>
       <p>123 Main St, Your City • Phone: (555) 555-5555</p>
     </div>
