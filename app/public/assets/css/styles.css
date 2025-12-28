@@ -51,8 +51,9 @@ body{font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue'
 .navbar-toggler[aria-expanded="true"] .hamburger .bar:nth-child(3){transform:rotate(-45deg) translateY(-11px)}
 
 /* Dropdown styling: collapse becomes an overlay dropdown on all screens */
+.site-header{position:relative; z-index:1100}
 .site-header .navbar{position:relative}
-.site-header .navbar-collapse{position:fixed; top:auto; left:0; right:0; background:#fff; z-index:1000; padding:0.75rem 1rem; box-shadow:0 4px 12px rgba(0,0,0,0.08); transition:opacity 0.2s ease; display:none !important; max-width:100vw; overflow-x:auto}
+.site-header .navbar-collapse{position:fixed; top:auto; left:0; right:0; background:#fff; z-index:1200; padding:calc(0.75rem + env(safe-area-inset-top, 0px)) 1rem 0.75rem 1rem; box-shadow:0 4px 12px rgba(0,0,0,0.08); transition:opacity 0.2s ease; display:none !important; max-width:100vw; overflow-x:auto}
 .site-header .navbar-collapse.show{display:block !important}
 .site-header .navbar-collapse .navbar-nav{flex-direction:column}
 .site-header .navbar-collapse .nav-link{padding:0.5rem 0}

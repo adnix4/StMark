@@ -32,26 +32,42 @@
 
     // Position dropdown under toggler (large screens).
     function positionDropdown(){
-      if (!isLargeScreen()){
-        navMenu.style.left = '';
-        navMenu.style.transform = '';
-        navMenu.style.top = '';
-        return;
-      }
       var togglerRect = toggler.getBoundingClientRect();
       var navbarRect = navbar.getBoundingClientRect();
-      var navbarBottom = navbarRect.bottom + window.pageYOffset;
-      var centerX = togglerRect.left + (togglerRect.width / 2) + window.pageXOffset;
-      
-      // Constrain dropdown to stay within viewport width
-      var dropdownWidth = navMenu.offsetWidth || 200;
-      var maxLeft = window.innerWidth - dropdownWidth - 10;
-      var calculatedLeft = Math.max(10, Math.min(centerX - (dropdownWidth / 2), maxLeft));
-      
-      navMenu.style.left = calculatedLeft + 'px';
-      navMenu.style.top = navbarBottom + 'px';
-      navMenu.style.transform = 'none';
-      navMenu.style.right = 'auto';
+      // navbarRect.bottom is relative to viewport; use that for top position
+      var navbarBottom = navbarRect.bottom;
+
+      // On large screens, center dropdown under toggler and allow shrink-to-fit
+      if (isLargeScreen()){
+        var centerX = togglerRect.left + (togglerRect.width / 2) + window.pageXOffset;
+        var dropdownWidth = navMenu.offsetWidth || 200;
+        var maxLeft = window.innerWidth - dropdownWidth - 10;
+        var calculatedLeft = Math.max(10, Math.min(centerX - (dropdownWidth / 2), maxLeft));
+        navMenu.style.left = calculatedLeft + 'px';
+        navMenu.style.right = 'auto';
+        navMenu.style.transform = 'none';
+        navMenu.style.width = 'auto';
+        navMenu.style.maxHeight = '';
+        navMenu.style.overflowY = '';
+      } else {
+        // Small screens: full width dropdown below navbar and scrollable if long
+        navMenu.style.left = '0';
+        navMenu.style.right = '0';
+        navMenu.style.width = '100%';
+        navMenu.style.transform = 'none';
+        // calculate available space below the navbar in viewport coords
+        var available = window.innerHeight - navbarBottom;
+        // add small offset so menu doesn't touch the navbar edge
+        var offsetTop = Math.max(navbarBottom, 0) + 4;
+        navMenu.style.top = offsetTop + 'px';
+        navMenu.style.maxHeight = (available > 120 ? available - 8 : 200) + 'px';
+        navMenu.style.overflowY = 'auto';
+        // ensure menu overlays content
+        navMenu.style.zIndex = 1200;
+        return;
+      }
+      // set top for large screens as well (use viewport coords)
+      navMenu.style.top = (Math.max(navbarRect.bottom, 0) + 2) + 'px';
     }
 
     // Hover opens on large screens, and we position the dropdown
@@ -82,11 +98,33 @@
       });
     });
 
-    // Ensure dropdown is positioned when toggled by click (small or large)
+    // Ensure dropdown is positioned when toggled (on click or class change)
     toggler.addEventListener('click', function(){
-      // Position for large screens; for small screens leave default
-      if (isLargeScreen()) positionDropdown();
+      // Position shortly after Bootstrap toggles the class
+      setTimeout(positionDropdown, 20);
     });
+
+    // Observe class changes on navMenu to position when 'show' is added/removed
+    var mo = new MutationObserver(function(mutations){
+      mutations.forEach(function(m){
+        if (m.attributeName === 'class'){
+          var has = navMenu.classList.contains('show');
+          if (has){
+            positionDropdown();
+          } else {
+            // reset overrides
+            navMenu.style.left = '';
+            navMenu.style.right = '';
+            navMenu.style.top = '';
+            navMenu.style.width = '';
+            navMenu.style.maxHeight = '';
+            navMenu.style.overflowY = '';
+            navMenu.style.transform = '';
+          }
+        }
+      });
+    });
+    mo.observe(navMenu, { attributes: true });
 
     // Reposition on resize
     window.addEventListener('resize', function(){
