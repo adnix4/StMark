@@ -1,5 +1,4 @@
 <section class="py-4">
-
   <div class="hero has-img">
     <div class="container">
       <h1>Christmas 2025</h1>
