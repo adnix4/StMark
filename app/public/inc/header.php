@@ -13,11 +13,11 @@ if ($base !== '/') $base .= '/';
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" integrity="" crossorigin="anonymous">
   <link rel="stylesheet" href="<?php echo $base; ?>assets/css/styles.css">
 </head>
-<body>
+<body class="page-<?php echo isset($page) ? htmlspecialchars($page) : 'home'; ?>">
   <header class="site-header mb-4">
     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
       <div class="container-fluid">
-        <a class="navbar-brand fw-bold" href="<?php echo $base; ?>"><img src="<?php echo $base; ?>assets/images/logo.png" alt="St. Mark Logo" style="height: 40px; margin-right: 10px;"> St. Mark</a>
+        <a class="navbar-brand fw-bold" href="<?php echo $base; ?>"><img src="<?php echo $base; ?>assets/images/logo.png" alt="St. Mark Logo" style="height: 40px; margin-right: 10px;"></a>
         <button id="navToggle" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="hamburger" aria-hidden="false">
             <span class="bar"></span>

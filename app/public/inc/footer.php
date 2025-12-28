@@ -1,8 +1,8 @@
   </main>
   <footer class="bg-light py-4 border-top">
     <div class="container-fluid text-center small text-muted">
-      <p>&copy; <?php echo date('Y'); ?> Grace Church — All rights reserved.</p>
-      <p>123 Main St, Your City • Phone: (555) 555-5555</p>
+      <p>&copy; <?php echo date('Y'); ?> St. Mark Lutheran Church — All rights reserved.</p>
+      <p>3307 State St, Eau Claire, WI 54701 • Phone: (715) 834-5782</p>
     </div>
   </footer>
 
