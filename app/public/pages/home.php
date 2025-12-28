@@ -1,4 +1,4 @@
-<section class="hero">
+<section class="hero has-img">
   <div class="container">
     <h1 class="display-5">Welcome to St. Mark Lutheran Church</h1>
     <p class="lead">A welcoming community to explore faith, serve others, and grow together.</p>

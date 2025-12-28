@@ -1,6 +1,11 @@
 <section class="py-4">
-  <h2>Contact Us</h2>
-  <p>If you'd like to get in touch, fill out the form below.</p>
+  <section class="hero has-img">
+    <div class="container">
+      <h1>Contact St. Mark Lutheran Church</h1>
+      <p class="lead">We'd love to hear from you! Whether you have questions, need assistance, or want to get involved, please reach out.</p>  
+      <p>If you'd like to get in touch, fill out the form below.</p>
+    </div>
+  </section>
   <form action="<?php echo $base; ?>contact_form.php" method="post" class="row g-3 needs-validation" novalidate>
     <div class="col-md-6">
       <label for="name" class="form-label">Name</label>
