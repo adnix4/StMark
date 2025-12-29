@@ -68,6 +68,16 @@ body{font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue'
 @media (min-width:601px) and (max-width:1199px){
   .page-home .hero{ background-image: url('../images/church-front-800.jpg'); min-height:480px; }
 }
+/* Remove visual shadow from hero button on home page for better contrast */
+.page-home .hero .btn{
+  box-shadow: none !important;
+  text-shadow: none !important;
+}
+.page-home .hero .btn:hover,
+.page-home .hero .btn:focus,
+.page-home .hero .btn:active{
+  box-shadow: none !important;
+}
 
 .page-easter .hero{
   background-image: url('../images/easter-1200.jpg');
