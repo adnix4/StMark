@@ -138,3 +138,50 @@
     });
   });
 })();
+
+// Simplified service-list behavior: uses per-item data-target (preferred)
+(function(){
+  document.addEventListener('DOMContentLoaded', function(){
+    var serviceLists = document.querySelectorAll('.service-list');
+    if (!serviceLists || !serviceLists.length) return;
+
+    Array.prototype.forEach.call(serviceLists, function(list){
+      var items = list.querySelectorAll('li');
+      Array.prototype.forEach.call(items, function(item){
+        item.style.cursor = 'pointer';
+        if (!item.hasAttribute('tabindex')) item.setAttribute('tabindex', '0');
+        if (!item.hasAttribute('role')) item.setAttribute('role', 'button');
+
+        item.addEventListener('keydown', function(e){
+          var k = e.key || e.keyCode;
+          if (k === 'Enter' || k === ' ' || k === 13 || k === 32){ e.preventDefault(); item.click(); }
+        });
+
+        item.addEventListener('click', function(){
+          // Active state
+          Array.prototype.forEach.call(items, function(li){ li.classList.remove('active'); li.removeAttribute('aria-current'); });
+          item.classList.add('active');
+          item.setAttribute('aria-current', 'true');
+
+          // Prefer per-item data-target
+          var selector = item.dataset && item.dataset.target ? item.dataset.target : null;
+          var targetEl = selector ? document.querySelector(selector) : null;
+
+          // If no per-item selector, use list-level data-target and map by index
+          if (!targetEl && list.dataset && list.dataset.target){
+            var container = document.querySelector(list.dataset.target);
+            if (container){
+              var heads = container.querySelectorAll('h3');
+              targetEl = heads[Array.prototype.indexOf.call(items, item)] || heads[0];
+            }
+          }
+
+          if (!targetEl) return;
+          if (!targetEl.hasAttribute('tabindex')) targetEl.setAttribute('tabindex', '-1');
+          targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          setTimeout(function(){ targetEl.focus(); }, 300);
+        });
+      });
+    });
+  });
+})();

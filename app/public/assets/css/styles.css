@@ -145,3 +145,23 @@ body{font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue'
   .site-header .navbar-collapse .btn{display:flex; align-items:center; justify-content:center; text-align:center; width:100%}
   .site-header .navbar-collapse .btn{padding-left:0; padding-right:0}
 }
+/* Service list active state */
+.service-list li.active {
+  background-color: #e8f5e9;
+  border-left: 4px solid #1b6351;
+  padding-left: calc(1em - 4px);
+  font-weight: 500;
+}
+
+/* Visually hidden text for screen readers */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
