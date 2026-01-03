@@ -19,9 +19,12 @@
       <li data-target="#easter-vigil">Easter Vigil - 8:00 P.M. April 4, 2026</li>
       <li data-target="#easter-sunday">Easter Sunday - 7:00 A.M. and 10:00 A.M. April 5, 2026</li>
     </ul>
-    <div class="m-4 service-details" id="lent-details" role="region" aria-live="polite" aria-label="Service details">
-      <h3 id="ash-wednesday">Ash Wednesday</h3>
-        <p>Ash Wednesday marks the beginning of Lent, a season of reflection and repentance. Join us for our Ash Wednesday service on February 18<sup>th</sup> at 6:30 P.M., where we will receive ashes as a sign of our mortality and need for God's grace.</p>
+    <ul class="list-unstyled service-details" id="lent-details" role="region" aria-live="polite" aria-label="Service details">
+      <li class= "d-flex flex-column flex-sm-row align-items-sm-center gap-2 mb-3" id="ash-wednesday">
+        <img src="<?php echo isset($base) ? $base : (rtrim(dirname($_SERVER['PHP_SELF']), '/\\') ?: '/') . '/'; ?>assets/images/ash-wed.jpg" alt="Imposition of ashes">
+        <h3>Ash Wednesday</h3>
+      </li>
+              <p class="m-4">Ash Wednesday marks the beginning of Lent, a season of reflection and repentance. Join us for our Ash Wednesday service on February 18<sup>th</sup> at 6:30 P.M., where we will receive ashes as a sign of our mortality and need for God's grace.</p>
       <h3 id="wednesday-lent-services">Wednesday Lent Services</h3>
         <p>Each Wednesday during Lent, we will hold a special service at 11:00 A.M. and 6:30 P.M.. These services will focus on themes of repentance, forgiveness, and renewal as we prepare our hearts for Easter.</p>
       <h3 id="wednesday-lent-suppers">Wednesday Lent Suppers</h3>
@@ -37,6 +40,6 @@
       <h3 id="easter-sunday">Easter Sunday</h3>
         <p>Join us on April 5<sup>th</sup> for our Easter Sunday services at 8:00 A.M. and 10:30 A.M. Celebrate the resurrection of our LORD with timeless hymns, the message of Jesus victory over the grave, and the joy of Holy Communion.</p>
         <p>We look forward to celebrating this joyous season with you and your family. May the hope of our risen savior fill your hearts with peace and joy!</p>
-    </div>
+    </ul>
   </div>
 </section>
