@@ -56,4 +56,4 @@ foreach ($pages as $name => $file) {
       </div>
     </nav>
   </header>
-  <main class="container-fluid mb-5">
+  <main>

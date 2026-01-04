@@ -13,7 +13,7 @@
     <ul class="service-list" data-target="#lent-details" role="listbox" aria-label="Lent and Holy Week services">
       <li data-target="#ash-wednesday">Ash Wednesday - 11:00 A.M. and 6:30 P.M. February 18, 2026</li>
       <li data-target="#wednesday-lent-services">Midweek Lent Services - Wednesdays 11:00 A.M. and 6:30 P.M. from February 25 to March 25</li>
-      <li data-target="#palm-sunday">Palm Sunday - 8:00 A.M. and 10:30 March 29, 2026 6:30 P.M. March 30</li>
+      <li data-target="#palm-sunday">Palm Sunday - 8:00 A.M. and 10:30 A.M. March 29, 2026 6:30 P.M. March 30</li>
       <li data-target="#maundy-thursday">Maundy Thursday - 11:30 A.M. and 6:30 P.M. April 2, 2026</li>
       <li data-target="#good-friday">Good Friday - 1:00 P.M. and 6:30 P.M. April 3, 2026</li>
       <li data-target="#easter-vigil">Easter Vigil - 8:00 P.M. April 4, 2026</li>
@@ -47,7 +47,7 @@
       <li id="maundy-thursday">
         <img src="<?php echo isset($base) ? $base : (rtrim(dirname($_SERVER['PHP_SELF']), '/\\') ?: '/') . '/'; ?>assets/images/maundy-thursday.jpg" alt="Maundy Thursday service">
         <h3>Maundy Thursday</h3>
-        <p class="m-2">On <strong>April 2nd, we will commemorate the Last Supper with a Maundy Thursday service at 6:30 P.M.</strong>, including Holy Communion and the stripping of the altar as we remember Jesus' love for us as he gives his life for us.</p>
+        <p class="m-2">We will commemorate the Last Supper with a Maundy Thursday service on <strong>April 2nd at 6:30 P.M.</strong>, including Holy Communion and the stripping of the altar as we remember Jesus' love for us as he gives his life for us.</p>
       </li>
 
       <li id="good-friday">
@@ -65,10 +65,10 @@
       <li id="easter-sunday">
         <img src="<?php echo isset($base) ? $base : (rtrim(dirname($_SERVER['PHP_SELF']), '/\\') ?: '/') . '/'; ?>assets/images/easter-sunday.jpg" alt="Easter Sunday service">
         <h3>Easter Sunday</h3>
-        <p class="m-2">Join us for one of our Easter Sunday services on <strong>April 5<sup>th</sup> at 8:00 A.M. and 10:30 A.M.</strong> Celebrate the resurrection of our LORD with timeless hymns, the message of Jesus victory over the grave, and the joy of Holy Communion.</p>
+        <p class="m-2">Join us for one of our Easter Sunday services on <strong>April 5<sup>th</sup> at 7:00 A.M. and 10:00 A.M.</strong> Celebrate the resurrection of our LORD with timeless hymns, the message of Jesus' victory over the grave, and the joy of Holy Communion.</p>
       </li>
 
-      <p>We look forward to celebrating this joyous season with you and your family. May the hope of our risen savior fill your hearts with peace and joy!</p>
+      <p>We look forward to celebrating this joyous season with you and your family. May the hope of our risen Savior fill your hearts with peace and joy!</p>
       
     </ul>
   </div>
