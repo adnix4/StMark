@@ -2,7 +2,26 @@
 :root{
   --brand:#1b6351;
 }
-body{font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; background:#f8f9fa;}
+body{font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; background:#f3f1e4;}
+.container-md{
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding-top: 3rem; 
+  text-align: center;
+}
+.content{
+ max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+.py-4{
+  padding-top:1.5rem;
+  padding-bottom:1.5rem;
+  align-items: center;
+  
+}
 .hero{
   background: linear-gradient(135deg, #1b6351, #1b6351);   
   color: #fff; /* text-white */

@@ -70,24 +70,24 @@
       navMenu.style.top = (Math.max(navbarRect.bottom, 0) + 2) + 'px';
     }
 
-    // Hover opens on large screens, and we position the dropdown
-    toggler.addEventListener('mouseenter', function(){
-      if (isLargeScreen()){
-        positionDropdown();
-        if (!navMenu.classList.contains('show')){
-          navMenu.classList.add('show');
-          toggler.setAttribute('aria-expanded', 'true');
-        }
-      }
-    });
+    // // Hover opens on large screens, and we position the dropdown
+    // toggler.addEventListener('mouseenter', function(){
+    //   if (isLargeScreen()){
+    //     positionDropdown();
+    //     if (!navMenu.classList.contains('show')){
+    //       navMenu.classList.add('show');
+    //       toggler.setAttribute('aria-expanded', 'true');
+    //     }
+    //   }
+    // });
 
-    // Close when leaving the navbar area on large screens
-    navbar.addEventListener('mouseleave', function(){
-      if (isLargeScreen() && navMenu.classList.contains('show')){
-        navMenu.classList.remove('show');
-        toggler.setAttribute('aria-expanded', 'false');
-      }
-    });
+    // // Close when leaving the navbar area on large screens
+    // navbar.addEventListener('mouseleave', function(){
+    //   if (isLargeScreen() && navMenu.classList.contains('show')){
+    //     navMenu.classList.remove('show');
+    //     toggler.setAttribute('aria-expanded', 'false');
+    //   }
+    // });
 
     // Close dropdown on small screens when clicking a nav link
     navLinks.forEach(function(link){
