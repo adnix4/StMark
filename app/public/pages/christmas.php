@@ -8,7 +8,7 @@
       
     </div>
   </div>
-  <div class="m-5">
+  <div class="content">
     <h2>Celebrate the birth of our Savior with us this Christmas Season</h2>
     <p>The Christmas season is a time of joy, reflection, and celebration as we commemorate the birth of Jesus Christ, our LORD and Savior. At St. Mark Lutheran Church, we invite you to join us in worship and fellowship during this special time of year.</p>
     <div class="m-4">

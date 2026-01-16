@@ -3,6 +3,7 @@
   --brand:#1b6351;
 }
 body{font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; background:#f3f1e4;}
+.center{text-align:center;}
 .container-md{
   margin-top: 1rem;
   margin-bottom: 1rem;
@@ -49,15 +50,26 @@ body{font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue'
 }
 .hero.has-bg > .container{position:top; z-index:1}
 
+#home-content{
+  margin-left: 2rem;
+  margin-right: 2rem;  
+}
+
 /* Responsive hero image with srcset (full-bleed/crop) */
 .hero-media{display:block; width:100%; aspect-ratio:16/9; overflow:hidden; position:relative}
 .hero-media img{width:100%; height:100%; object-fit:cover; display:block}
 .hero.has-img{position:relative; color:#fff; padding:0; margin-bottom:1.5rem; height:auto; display:flex; align-items:flex-start; padding-top:2rem; background-size:cover; background-position:center; background-repeat:no-repeat}
 .hero.has-img::before{content:''; position:absolute; inset:0; background:rgba(0,0,0,0.35); z-index:1}
 .hero.has-img > .container{position:relative; z-index:2; padding:0rem 0rem}
-.hero .container, .hero h1, .hero .lead { font-family: 'Times New Roman', Times, serif; font-weight:700; text-shadow: -2px -2px 4px rgba(0,0,0,0.6), 2px -2px 4px rgba(0,0,0,0.6), -2px 2px 4px rgba(0,0,0,0.6), 2px 2px 4px rgba(0,0,0,0.6), 0px 0px 8px rgba(0,0,0,0.7) }
+.hero .container, .hero h1, .hero .lead { 
+  font-family: 'Times New Roman', Times, serif;
+   font-weight:700; 
+   /* text-shadow: -1px -1px 1px rgba(0,0,0,0.6), 1px -1px 1px rgba(0,0,0,0.6), -1px 1px 1px rgba(0,0,0,0.6), 1px 1px 1px rgba(0,0,0,0.6), 1px 1px 1px rgba(0,0,0,0.7) */
+   color: bisque;
+   }
 .page-default .hero{ /* fallback: brand background if no page image specified */
   background: linear-gradient(135deg, var(--brand), var(--brand));
+  
 }
 
 /* Per-page hero backgrounds (examples). Put one block per page using the page-<name> body class.
@@ -86,6 +98,27 @@ body{font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue'
 }
 @media (min-width:601px) and (max-width:1199px){
   .page-home .hero{ background-image: url('../images/church-front-800.jpg'); min-height:480px; }
+}
+
+.page-contact .hero{
+  background-image: url('../images/contactUs-1200.jpg');
+  background-size: cover;
+  background-position: center;
+  min-height: 500px;
+  color: black;
+
+}
+.page-contact .hero h1{
+  color: black; 
+}
+@media (max-width:600px){
+  .page-contact .hero{ background-image: url('../images/contactUs-480.jpg'); min-height:380px; }
+}
+@media (min-width:601px) and (max-width:1199px){
+  .page-contact .hero{ background-image: url('../images/contactUs-800.jpg'); min-height:480px; }
+}
+@media (min-width:601px){
+  .page-contact .hero > .container{ margin-right: auto; margin-top: auto; margin-left: 50%;}
 }
 /* Remove visual shadow from hero button on home page for better contrast */
 .page-home .hero .btn{

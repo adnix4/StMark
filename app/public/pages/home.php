@@ -6,7 +6,7 @@
   </div>
 </section>
 
-<section class="row">
+<section class="row" id="home-content">
   <div class="col-md-8">
     <h2>Recent message</h2>
     <p>Listen to our latest sermon and reflections from our pastor. (Placeholder content.)</p>
