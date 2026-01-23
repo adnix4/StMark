@@ -1,7 +1,8 @@
 <section class="hero has-img">
   <div class="container">
     <h1 class="display-5">Welcome to St. Mark Lutheran Church</h1>
-    <p class="lead">A welcoming community to explore faith, serve others, and grow together.</p>
+    <p class="lead">As men, women, and children united through faith in christ, we exist to <strong>GLORIFY</strong> the triune God <strong>GROW</strong> in grace and knowledge <Strong>GO</strong> to proclaim God's truth to one another, the campus, the community, and the world.</p>
+    <p><i>"Therefore go and make disciples of all nations..."</i> - Matthew 28:19</p>
     <a class="btn btn-light btn-lg" href="<?php echo $base; ?>?page=about">Learn more</a>
   </div>
 </section>
