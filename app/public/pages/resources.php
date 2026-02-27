@@ -6,46 +6,39 @@
     </div>
   </div>
   <div class="content">
-    <div class="container-md">
-    <h2 class="center">Lent and Holy Week 2026</h2>
-    <p>Join us at St. Mark Lutheran church in Eau Claire as we journey from Ash Wednesday to Easter Sunday. </p>
-  </div>
-    <p class="visually-hidden">Select a service from the list below to view details.</p>
-    <ul class="service-list" data-target="#lent-details" role="listbox" aria-label="Lent and Holy Week services">
-      <li data-target="#ash-wednesday"><strong>Ash Wednesday</strong> - 11:00 A.M. and 6:30 P.M. February 18, 2026</li>
-      <li data-target="#wednesday-lent-services"><strong>Midweek Lent Services</strong> - Wednesdays 5:00 P.M. from February 25 to March 25</li>
-      <li data-target="#wednesday-lent-suppers"><strong>Midweek Lent Suppers</strong> - Wednesdays 11:00 A.M. and 6:30 P.M. from February 25 to March 25</li>
-      <li data-target="#palm-sunday"><strong>Palm Sunday</strong> - 8:00 A.M. and 10:30 A.M. March 29, 2026 6:30 P.M. March 30</li>
-      <li data-target="#maundy-thursday"><strong>Maundy Thursday</strong> - 11:30 A.M. and 6:30 P.M. April 2, 2026</li>
-      <li data-target="#good-friday"><strong>Good Friday</strong> - 1:00 P.M. and 6:30 P.M. April 3, 2026</li>
-      <li data-target="#easter-vigil"><strong>Easter Vigil</strong> - 8:00 P.M. April 4, 2026</li>
-      <li data-target="#easter-sunday"><strong>Easter Sunday</strong> - 7:00 A.M. and 10:00 A.M. April 5, 2026</li>
-    </ul>
-    <ul class="list-unstyled service-details" id="lent-details" role="region" aria-live="polite" aria-label="Service details">
-      <li class= "container-md" id="ash-wednesday">
-        
-        <img src="<?php echo isset($base) ? $base : (rtrim(dirname($_SERVER['PHP_SELF']), '/\\') ?: '/') . '/'; ?>assets/images/ash-wed.jpg" alt="Imposition of ashes">
-        <h3>Ash Wednesday</h3>
-        <p class="m-2">Ash Wednesday marks the beginning of Lent, a season of reflection and repentance. Join us for our Ash Wednesday service on <strong>February 18<sup>th</sup> at 6:30 P.M.</strong>, where we will receive ashes as a sign of our mortality and need for God's grace.</p>
-        
-      </li>
+    
+    <ul class="list-unstyled resource-details" id="resources-details" role="region" aria-live="polite" aria-label="Resource details">
+     
        
-      <li class= "container-md" id="wednesday-lent-services">
-        <img src="<?php echo isset($base) ? $base : (rtrim(dirname($_SERVER['PHP_SELF']), '/\\') ?: '/') . '/'; ?>assets/images/lent-service.jpg" alt="Midweek services during Lent">
-        <h3>Wednesday Lent Services</h3>
-        <p class="m-2">During Lent, we will hold special mid week services on <strong>Wednesdays 11:00 A.M. and 6:30 P.M.</strong>. These services will focus on themes of repentance, forgiveness, and renewal as we prepare our hearts for Easter.</p>
+      <li class= "container-md" id="suicide-prevention">
+        <div class="resource-description">
+          <img src="<?php echo isset($base) ? $base : (rtrim(dirname($_SERVER['PHP_SELF']), '/\\') ?: '/') . '/'; ?>assets/images/Suicide-Prevention.png" alt="Midweek services during Lent">
+          <h3>Suicide Prevention</h3>
+          <p class="m-2">If you or someone you know is in crisis and needs immediate attention <strong>Call 911</strong>. If you or someone you know needs help call or text the <strong> National Suicide Prevention Lifeline: Call or Text 988 </strong>. We care about you don't wait to seek the help you need.</p>
+        </div>
       </li>
 
-      <li class= "container-md" id="wednesday-lent-suppers">
-        <img src="<?php echo isset($base) ? $base : (rtrim(dirname($_SERVER['PHP_SELF']), '/\\') ?: '/') . '/'; ?>assets/images/lent-supper.jpg" alt="Lent supper gathering">
-        <h3>Wednesday Lent Suppers</h3>
-        <p class="m-2">Join us for a light supper before our evening Lent services, starting at <strong>5:00 P.M.</strong> in the Gym. This is a great opportunity to connect with fellow members of our congregation.</p>
+      <li class= "container-md" id="contact-us">
+        <a class="resource-description" href="<?php echo $base; ?>?page=contact">
+        <img src="<?php echo isset($base) ? $base : (rtrim(dirname($_SERVER['PHP_SELF']), '/\\') ?: '/') . '/'; ?>assets/images/shepherd.jpg" alt="Pastoral counseling">
+        <h3>Pastoral Counsel</h3>
+        <p>If you would like to speak with a pastor, please contact us using the information on our contact page.</p>
+      </a>
       </li>
 
-      <li class= "container-md" id="palm-sunday">
-        <img src="<?php echo isset($base) ? $base : (rtrim(dirname($_SERVER['PHP_SELF']), '/\\') ?: '/') . '/'; ?>assets/images/palm-sunday.jpg" alt="Palm Sunday procession">
-      <h3>Palm Sunday</h3>
-        <p class="m-2">Celebrate Jesus' triumphant entry into Jerusalem on Palm Sunday, <strong>March 29<sup>th</sup> at 8:00 A.M. and 10:30 A.M.</strong> Services will feature a procession of palms branches as we start our journey in Holy Week.</p>
+      <li class= "container-md" id="Christian-Life-Resources">
+        <a class="resource-description" href="https://christianliferesources.com/" target="_blank" rel="noopener noreferrer">
+        <img src="<?php echo isset($base) ? $base : (rtrim(dirname($_SERVER['PHP_SELF']), '/\\') ?: '/') . '/'; ?>assets/images/christianLifeResources.jpg" alt="Christian Life Resources">
+      <h3>Christian Life Resources</h3>
+        <p class="m-2">Promoting the sanctity of life and reaching hearts with the Gospel.</p>
+      </a>
+      </li>
+
+      <li class= "container-md" id="WELS">
+                
+        <a class="resource-description" href="https://wels.net/serving-you/" target="_blank" rel="noopener noreferrer"><img src="<?php echo $base; ?>assets/images/WELSlogo-thumb.jpg" alt = "WELS resources" >
+          <p> Our synod has many resources to help you strengthen your walk with Jesus, and help you in a time of need.</p>
+        </a>        
       </li>
 
       <li class= "container-md" id="maundy-thursday">

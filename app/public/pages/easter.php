@@ -10,7 +10,7 @@
     <h2 class="center">Lent and Holy Week 2026</h2>
     <p>Join us at St. Mark Lutheran church in Eau Claire as we journey from Ash Wednesday to Easter Sunday. </p>
   </div>
-    <p class="visually-hidden">Select a service from the list below to view details.</p>
+    <p class="descriptor">Select a service from the list below to view service details.</p>
     <ul class="service-list" data-target="#lent-details" role="listbox" aria-label="Lent and Holy Week services">
       <li data-target="#ash-wednesday"><strong>Ash Wednesday</strong> - 11:00 A.M. and 6:30 P.M. February 18, 2026</li>
       <li data-target="#wednesday-lent-services"><strong>Midweek Lent Services</strong> - Wednesdays 5:00 P.M. from February 25 to March 25</li>
